@@ -1,24 +1,13 @@
 package lib.listeners;
 
-import static org.testng.Assert.assertEquals;
-
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Capabilities;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.events.WebDriverEventListener;
@@ -40,14 +29,14 @@ public class WebDriverListener extends HTMLReporter implements WebDriverEventLis
 	}
 
 	public void afterAlertAccept(WebDriver driver) {
-		
+
 	}
 
 	public void afterAlertDismiss(WebDriver driver) {
 
 	}
 
-	public void beforeAlertDismiss(WebDriver driver) {		
+	public void beforeAlertDismiss(WebDriver driver) {
 
 	}
 
@@ -63,7 +52,7 @@ public class WebDriverListener extends HTMLReporter implements WebDriverEventLis
 	}
 
 	public void afterNavigateBack(WebDriver driver) {
-	
+
 	}
 
 	public void beforeNavigateForward(WebDriver driver) {
@@ -71,7 +60,7 @@ public class WebDriverListener extends HTMLReporter implements WebDriverEventLis
 	}
 
 	public void afterNavigateForward(WebDriver driver) {
-		
+
 	}
 
 	public void beforeNavigateRefresh(WebDriver driver) {
@@ -79,7 +68,7 @@ public class WebDriverListener extends HTMLReporter implements WebDriverEventLis
 	}
 
 	public void afterNavigateRefresh(WebDriver driver) {
-		
+
 	}
 
 	public void beforeFindBy(By by, WebElement element, WebDriver driver) {
@@ -90,7 +79,7 @@ public class WebDriverListener extends HTMLReporter implements WebDriverEventLis
 	}
 
 	public void beforeClickOn(WebElement element, WebDriver driver) {
-	
+
 	}
 
 	public void afterClickOn(WebElement element, WebDriver driver) {
@@ -101,7 +90,6 @@ public class WebDriverListener extends HTMLReporter implements WebDriverEventLis
 	}
 
 	public void afterChangeValueOf(WebElement element, WebDriver driver, CharSequence[] keysToSend) {
-
 
 	}
 
@@ -118,7 +106,6 @@ public class WebDriverListener extends HTMLReporter implements WebDriverEventLis
 	}
 
 	public void afterSwitchToWindow(String windowName, WebDriver driver) {
-		
 
 	}
 
@@ -137,7 +124,8 @@ public class WebDriverListener extends HTMLReporter implements WebDriverEventLis
 
 		long number = (long) Math.floor(Math.random() * 900000000L) + 10000000L;
 		try {
-			FileUtils.copyFile(driver.getScreenshotAs(OutputType.FILE) , new File("./reports/images/"+number+".png"));
+			FileUtils.copyFile(driver.getScreenshotAs(OutputType.FILE),
+					new File("./reports/images/" + number + ".png"));
 		} catch (WebDriverException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -148,12 +136,12 @@ public class WebDriverListener extends HTMLReporter implements WebDriverEventLis
 
 	@Override
 	public void beforeGetText(WebElement element, WebDriver driver) {
-		
+
 	}
 
 	@Override
 	public void afterGetText(WebElement element, WebDriver driver, String text) {
-		
+
 	}
 
 }

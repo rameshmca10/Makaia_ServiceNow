@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import lib.selenium.PreAndPost;
 import pages.selenium.LoginPage;
 
-public class TC001_CreateIncident extends PreAndPost{
+public class TC001_CreateIncident extends PreAndPost {
 
 	@BeforeTest
 	public void setValues() {
@@ -22,20 +22,8 @@ public class TC001_CreateIncident extends PreAndPost{
 
 	@Test(dataProvider = "fetchData")
 	public void createIncident(String filter, String user, String short_desc) {
-		new LoginPage(driver,test)
-		.loginApp()
-		.searchUsingFilter(filter)
-		.clickCreateNew()
-		.getIncidentNumber()
-		.selectUser(user)
-		.typeShortDescription(short_desc)
-		.clickSubmit();
+		new LoginPage(driver, test).loginApp().searchUsingFilter(filter).clickCreateNew().getIncidentNumber()
+				.selectUser(user).typeShortDescription(short_desc).clickSubmit();
 	}
 
-
 }
-
-
-
-
-
